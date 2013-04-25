@@ -47,6 +47,10 @@ module.exports = function(grunt) {
           ''
         ].join('\n');
 
+    if(this.filesSrc.length === 0) {
+      grunt.warn("No template files in src path!");
+    }
+
     this.files.forEach(function (file) {
       var fileList = file.src;
       templateFileList = fileList.filter(function (f) {
@@ -83,15 +87,14 @@ module.exports = function(grunt) {
     var uniqueDirectoryLevel = 0;
 
     // Figure out at what level folder names start branching
-    for(var i = 0; directoriesAreAllTheSame && i < pathDepth; i++) {
+    for(var i = 1; directoriesAreAllTheSame && i < pathDepth; i++) {
+      directoriesAreAllTheSame = false;
       filePathArray[i].forEach( function (element, index, arr) {
         if (index !== numberOfFiles - 1) {
           directoriesAreAllTheSame = (arr[index] === arr[index + 1]);
         }
       });
-      if(!directoriesAreAllTheSame) {
-        uniqueDirectoryLevel = i;
-      }
+      uniqueDirectoryLevel = i;
     }
 
     // populate folders[] and templates[] with appropriate names
