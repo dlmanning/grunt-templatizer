@@ -1,0 +1,46 @@
+{
+  "name": "grunt-templatizer",
+  "description": "grunt task runner for templatizer",
+  "version": "0.0.1",
+  "homepage": "https://github.com/dlmanning/grunt-templatizer",
+  "author": {
+    "name": "David Manning",
+    "email": "dlmanning@me.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dlmanning/grunt-templatizer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dlmanning/grunt-templatizer/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/dlmanning/grunt-templatizer/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "0.1.1",
+    "grunt-contrib-clean": "0.4.0",
+    "grunt-contrib-nodeunit": "0.1.2",
+    "grunt": "0.4.1"
+  },
+  "peerDependencies": {
+    "grunt": "0.4.1"
+  },
+  "keywords": [
+    "gruntplugin"
+  ],
+  "dependencies": {
+    "jade": "0.29.0",
+    "uglify-js": "2.2.5"
+  }
+}
