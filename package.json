@@ -1,7 +1,7 @@
 {
   "name": "grunt-templatizer",
   "description": "grunt task runner for templatizer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/dlmanning/grunt-templatizer",
   "author": {
     "name": "David Manning",
