@@ -101,8 +101,8 @@ module.exports = function(grunt) {
     for(var i = 0; i < numberOfFiles; i++) {
       folderObjectName = '';
       for (var j = uniqueDirectoryLevel; j + 1 < pathDepth && filePathArray[j + 1][i] !== ''; j++)
-        folderObjectName += '.' + filePathArray[j][i] ;
-      templates.push('exports' + folderObjectName + '.' + path.basename(filePathArray[j][i], '.jade'));
+        folderObjectName += '[\'' + filePathArray[j][i] + '\']';
+      templates.push('exports' + folderObjectName + '[\'' + path.basename(filePathArray[j][i], '.jade') + '\']');
       // are we dealing with the filename now?
       if (uniqueDirectoryLevel + 1 < pathDepth && filePathArray[uniqueDirectoryLevel + 1][i] !== '')
         folders.push(folderObjectName.slice(1));
@@ -117,7 +117,7 @@ module.exports = function(grunt) {
 
     output += '\n// create our folder objects';
     folders.forEach(function (folder) {
-      output += '\nexports.' + folder + ' = {};';
+      output += '\nexports[' + folder + ' = {};';
     });
     output += '\n';
 
